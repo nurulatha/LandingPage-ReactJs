@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { fadeIn } from "../utils/motion";
 
 const Pricing = () => {
   const [productCount, setProductCount] = useState(1);
@@ -10,15 +12,15 @@ const Pricing = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Pricing</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* starter plan */}
-          <div className="bg-white p-8 rounded-lg shadow-lg">
+          <motion.div variants={fadeIn("up", 0.3)} initial="hidden" whileInView="show" className="bg-white p-8 rounded-lg shadow-lg">
             <h3 className="text-xl text-gray-600 mb-4">Starter</h3>
             <p className="text-3xl font-bold mb-6">${starterPrice}/mo</p>
-          </div>
+          </motion.div>
           {/* business plan */}
-          <div className="bg-white p-8 rounded-lg shadow-lg">
+          <motion.div variants={fadeIn("up", 0.3)} initial="hidden" whileInView="show" className="bg-white p-8 rounded-lg shadow-lg">
             <h3 className="text-xl text-gray-600 mb-4">Business</h3>
             <p className="text-3xl font-bold mb-6">${businessPrice}/mo</p>
-          </div>
+          </motion.div>
         </div>
         <div className="max-w-xl mx-auto">
           <p className="text-center text-gray-600 mb-4">{productCount} products</p>
